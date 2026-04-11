@@ -1315,17 +1315,26 @@ document.querySelectorAll('.rv,.rv-left,.rv-right,.rv-scale').forEach(el=>{
 const ALL_VIEWS = ['home','cp',...Object.keys(CATS).map(()=>null)].filter(Boolean);
 
 function showSubpage(slug){
-  document.querySelectorAll('.page,.subpage').forEach(p=>p.classList.remove('active'));
-  const el = document.getElementById('sp-'+slug);
-  if(el){ el.classList.add('active'); window.scrollTo(0,0); }
-  else   { console.warn('Subpage not found: sp-'+slug); }
+  _saveHomeScroll();
+  var current = document.querySelector('.page.active, .subpage.active');
+  if(current){
+    current.classList.add('page-transition-out');
+    setTimeout(function(){
+      current.classList.remove('page-transition-out');
+      document.querySelectorAll('.page,.subpage').forEach(function(p){p.classList.remove('active');});
+      var el = document.getElementById('sp-'+slug);
+      if(el){ el.classList.add('active','page-transition-in'); window.scrollTo(0,0); setTimeout(function(){el.classList.remove('page-transition-in');},500); }
+      else { console.warn('Subpage not found: sp-'+slug); }
+    }, 300);
+  } else {
+    document.querySelectorAll('.page,.subpage').forEach(function(p){p.classList.remove('active');});
+    var el = document.getElementById('sp-'+slug);
+    if(el){ el.classList.add('active'); window.scrollTo(0,0); }
+  }
 }
 
 function goBack(){
-  document.querySelectorAll('.page,.subpage').forEach(p=>p.classList.remove('active'));
-  document.getElementById('home').classList.add('active');
-  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  requestAnimationFrame(()=>requestAnimationFrame(resetHomeViewport));
+  goHome();
 }
 
 /* CATEGORY HERO PARALLAX — subtle image movement on scroll in category pages */
