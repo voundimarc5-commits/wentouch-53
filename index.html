@@ -1150,11 +1150,56 @@ function resetHomeViewport(){
   }
 }
 
-function goHome(){
-  document.querySelectorAll('.page,.subpage').forEach(p=>p.classList.remove('active'));
-  document.getElementById('home').classList.add('active');
-  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  requestAnimationFrame(()=>requestAnimationFrame(resetHomeViewport));
+/* ── Scroll position memory ─── */
+var _homeScrollY = 0;
+function _saveHomeScroll(){ _homeScrollY = window.scrollY; }
+
+/* ── Re-trigger all reveal animations ─── */
+function _replayReveals(){
+  document.querySelectorAll('#home .rv.ok, #home .rv-left.ok, #home .rv-right.ok, #home .rv-scale.ok').forEach(function(el){
+    el.classList.remove('ok');
+  });
+  document.querySelectorAll('#psProblems.ok,#psDivider.ok,#psSolutions.ok').forEach(function(el){
+    el.classList.remove('ok');
+  });
+  // Re-observe so they animate again when visible
+  requestAnimationFrame(function(){
+    document.querySelectorAll('#home .rv, #home .rv-left, #home .rv-right, #home .rv-scale').forEach(function(el){
+      new IntersectionObserver(function(entries, obs){
+        if(entries[0].isIntersecting){ entries[0].target.classList.add('ok'); obs.disconnect(); }
+      },{threshold:.12, rootMargin:'0px 0px -40px 0px'}).observe(el);
+    });
+    document.querySelectorAll('#psProblems,#psDivider,#psSolutions').forEach(function(el){
+      new IntersectionObserver(function(entries, obs){
+        if(entries[0].isIntersecting){ entries[0].target.classList.add('ok'); obs.disconnect(); }
+      },{threshold:.15}).observe(el);
+    });
+  });
+}
+
+function goHome(skipScroll){
+  var activePage = document.querySelector('.page.active:not(#home), .subpage.active');
+  if(activePage){
+    activePage.classList.add('page-transition-out');
+    setTimeout(function(){
+      activePage.classList.remove('page-transition-out');
+      _doGoHome(skipScroll);
+    }, 300);
+  } else {
+    _doGoHome(skipScroll);
+  }
+}
+
+function _doGoHome(skipScroll){
+  document.querySelectorAll('.page,.subpage').forEach(function(p){p.classList.remove('active');});
+  var home = document.getElementById('home');
+  home.classList.add('active','page-transition-in');
+  if(!skipScroll){
+    window.scrollTo({ top: _homeScrollY, left: 0, behavior: 'auto' });
+  }
+  _replayReveals();
+  setTimeout(function(){ home.classList.remove('page-transition-in'); }, 500);
+  requestAnimationFrame(function(){requestAnimationFrame(resetHomeViewport);});
 }
 
 let currentTabFn = null;
