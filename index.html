@@ -1246,9 +1246,17 @@ function gocat(key){
   currentTabFn = cfg.tabs[0].fn;
   renderBrands(BRANDS.filter(cfg.tabs[0].fn));
 
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('cp').classList.add('active');
-  window.scrollTo(0,0);
+  _saveHomeScroll();
+  var home = document.getElementById('home');
+  home.classList.add('page-transition-out');
+  setTimeout(function(){
+    home.classList.remove('page-transition-out');
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    var cp = document.getElementById('cp');
+    cp.classList.add('active','page-transition-in');
+    window.scrollTo(0,0);
+    setTimeout(function(){ cp.classList.remove('page-transition-in'); }, 500);
+  }, 300);
 }
 
 function doSearch(q){
