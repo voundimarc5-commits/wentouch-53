@@ -822,6 +822,54 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
 .qsn-sig small{font-size:11px;color:rgba(255,255,255,.2);font-family:var(--fb)}
 </style>
 
+<style>
+/* ═══════ WHATSAPP CONCIERGE LAYER — discret, doré, premium ═══════ */
+.wa-line{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-3);font-family:var(--fb);text-decoration:none;letter-spacing:.01em;transition:color .25s ease}
+.wa-line:hover{color:var(--gold)}
+.wa-line .wa-ic{width:14px;height:14px;flex-shrink:0;opacity:.7}
+.wa-line:hover .wa-ic{opacity:1}
+.wa-line.on-dark{color:rgba(255,255,255,.55)}
+.wa-line.on-dark:hover{color:var(--gold-l)}
+
+.wa-reassure{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.55);font-family:var(--fb)}
+.wa-reassure .wa-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-l);box-shadow:0 0 0 0 rgba(212,174,78,.6);animation:waPulse 2.4s ease-out infinite}
+@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(212,174,78,.55)}70%{box-shadow:0 0 0 8px rgba(212,174,78,0)}100%{box-shadow:0 0 0 0 rgba(212,174,78,0)}}
+
+.wa-card{margin-top:18px;border:1px solid var(--beige-3);background:rgba(253,252,251,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink-2);transition:border-color .25s,transform .25s}
+.wa-card:hover{border-color:rgba(184,148,44,.45);transform:translateY(-1px)}
+.wa-card .wa-ic{width:18px;height:18px;color:var(--gold)}
+.wa-card-txt{display:flex;flex-direction:column;line-height:1.4}
+.wa-card-txt strong{font-family:var(--fd);font-size:14px;font-weight:500;color:var(--ink)}
+.wa-card-txt span{font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+
+/* Step inline — Comment ça marche */
+.proc-step .wa-step{display:block;margin-top:6px;font-size:11px;color:var(--gold);letter-spacing:.04em;opacity:.85}
+
+/* Floating concierge button */
+.wa-float{position:fixed;bottom:78px;right:18px;z-index:90;display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:linear-gradient(135deg,#1A1814,#3D3930);color:#fff;border:1px solid rgba(212,174,78,.35);border-radius:32px;text-decoration:none;font-family:var(--fb);font-size:13px;font-weight:500;box-shadow:0 8px 28px rgba(26,24,20,.28);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;opacity:0;transform:translateY(8px);pointer-events:none}
+.wa-float.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(26,24,20,.36);border-color:rgba(212,174,78,.7)}
+.wa-float .wa-ic{width:16px;height:16px;color:var(--gold-l)}
+.wa-float .wa-float-lbl{white-space:nowrap}
+@media(max-width:520px){
+  .wa-float{bottom:70px;right:14px;padding:11px 16px;font-size:12px}
+  .wa-float .wa-float-lbl{display:none}
+  .wa-float .wa-float-short{display:inline}
+}
+@media(min-width:521px){.wa-float .wa-float-short{display:none}}
+
+/* Pre-footer concierge band */
+.wa-band{margin:0 auto;max-width:760px;padding:36px 24px 8px;text-align:center}
+.wa-band-lbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
+.wa-band h3{font-family:var(--fd);font-size:clamp(22px,4vw,30px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:10px}
+.wa-band h3 em{font-style:italic;color:var(--gold)}
+.wa-band p{font-size:13px;color:var(--ink-3);line-height:1.7;margin-bottom:20px;max-width:520px;margin-left:auto;margin-right:auto}
+.wa-band a.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border-radius:30px;background:transparent;border:1px solid rgba(184,148,44,.5);color:var(--ink);font-family:var(--fb);font-size:13px;text-decoration:none;transition:background .25s,border-color .25s,color .25s}
+.wa-band a.wa-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wa-band a.wa-btn .wa-ic{width:15px;height:15px;color:var(--gold)}
+.wa-band a.wa-btn:hover .wa-ic{color:var(--gold-l)}
+</style>
+
 
 
 <footer>
