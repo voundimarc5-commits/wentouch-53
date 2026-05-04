@@ -867,11 +867,15 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
 .wa-float .wa-ic{width:16px;height:16px;color:var(--gold-l)}
 .wa-float .wa-float-lbl{white-space:nowrap}
 @media(max-width:520px){
-  .wa-float{bottom:70px;right:14px;padding:11px 16px;font-size:12px}
+  .wa-float{bottom:calc(70px + env(safe-area-inset-bottom,0px));right:14px;padding:11px 16px;font-size:12px}
   .wa-float .wa-float-lbl{display:none}
   .wa-float .wa-float-short{display:inline}
+  .qlink-input{width:100%;min-width:0;font-size:14px}
 }
 @media(min-width:521px){.wa-float .wa-float-short{display:none}}
+/* Reveal fallback — never leave content hidden if observer doesn't fire */
+.rv{transition:opacity .9s ease,transform .9s ease}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* Pre-footer concierge band */
 .wa-band{margin:0 auto;max-width:760px;padding:36px 24px 8px;text-align:center}
