@@ -914,6 +914,7 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
     <a href="https://wa.me/237692052155" target="_blank" rel="noopener">WhatsApp · +237 692 052 155</a>
     <a href="#" onclick="showSubpage('mentions-legales');return false">Mentions légales</a>
     <a href="#" onclick="showSubpage('confidentialite');return false">Confidentialité</a>
+    <a href="#" onclick="if(window.openCookieSettings)openCookieSettings();return false">Gérer les cookies</a>
   </div>
   <div class="fbottom rv rv-d4"><p>Douala &amp; Yaoundé, Cameroun</p><p style="margin-top:6px">© 2026 Wentouch. Tous droits réservés.</p></div>
 </footer>
@@ -2461,7 +2462,8 @@ document.querySelectorAll('.rv:not(.ok),.rv-left:not(.ok),.rv-right:not(.ok),.rv
   <div class="lg-s">
     <h2>Hébergement</h2>
     <div class="lg-card">
-      <p>Le site Wentouch est hébergé sur l'infrastructure cloud Lovable. Les données techniques (logs, performance) sont stockées sur des serveurs européens conformes aux standards en vigueur.</p>
+      <p>Le site Wentouch est hébergé par <strong>Hostinger International Ltd.</strong> — 61 Lordou Vironos Street, 6023 Larnaca, Chypre.</p>
+      <p>Les données du site et des utilisateurs sont stockées sur des <strong>serveurs privés sécurisés situés à Francfort, en Allemagne</strong> (Union européenne), conformément au RGPD. Ces serveurs bénéficient d'un chiffrement au repos, de sauvegardes régulières et d'un accès restreint.</p>
     </div>
   </div>
 
@@ -2754,6 +2756,96 @@ document.querySelectorAll('.rv:not(.ok),.rv-left:not(.ok),.rv-right:not(.ok),.rv
   var show=function(){if(window.scrollY>320)btn.classList.add('show');else btn.classList.remove('show')};
   window.addEventListener('scroll',show,{passive:true});
   setTimeout(show,200);
+})();
+</script>
+
+<style>
+.ck-banner{position:fixed;left:18px;right:18px;bottom:18px;z-index:120;max-width:520px;margin-left:auto;background:rgba(26,24,20,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(212,174,78,.28);border-radius:18px;padding:22px 24px;color:#F5F1E8;font-family:var(--fb);font-size:13.5px;line-height:1.55;box-shadow:0 18px 50px rgba(0,0,0,.45);transform:translateY(20px);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease}
+.ck-banner.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.ck-banner h3{font-family:var(--fd);font-size:16px;font-weight:500;margin:0 0 8px;letter-spacing:-.01em;color:#fff}
+.ck-banner p{margin:0 0 14px;color:rgba(245,241,232,.78)}
+.ck-banner a{color:#D4AE4E;text-decoration:none;border-bottom:1px solid rgba(212,174,78,.4)}
+.ck-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ck-btn{flex:1;min-width:120px;padding:11px 14px;border-radius:10px;font-family:var(--fb);font-size:12.5px;font-weight:500;cursor:pointer;border:1px solid transparent;transition:all .2s ease}
+.ck-btn-primary{background:linear-gradient(135deg,#D4AE4E,#B8942C);color:#1A1814}
+.ck-btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(212,174,78,.3)}
+.ck-btn-ghost{background:transparent;color:#F5F1E8;border:1px solid rgba(245,241,232,.25)}
+.ck-btn-ghost:hover{border-color:rgba(245,241,232,.55);background:rgba(255,255,255,.04)}
+.ck-prefs{display:none;margin:4px 0 16px;padding:14px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(245,241,232,.08)}
+.ck-prefs.open{display:block}
+.ck-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid rgba(245,241,232,.06)}
+.ck-row:last-child{border-bottom:none}
+.ck-row-info strong{display:block;font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
+.ck-row-info span{font-size:12px;color:rgba(245,241,232,.6);line-height:1.5}
+.ck-toggle{position:relative;width:38px;height:22px;flex-shrink:0;margin-top:2px}
+.ck-toggle input{opacity:0;width:0;height:0}
+.ck-slider{position:absolute;inset:0;background:rgba(245,241,232,.18);border-radius:22px;cursor:pointer;transition:.25s}
+.ck-slider::before{content:'';position:absolute;height:16px;width:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.25s}
+.ck-toggle input:checked+.ck-slider{background:linear-gradient(135deg,#D4AE4E,#B8942C)}
+.ck-toggle input:checked+.ck-slider::before{transform:translateX(16px)}
+.ck-toggle input:disabled+.ck-slider{opacity:.6;cursor:not-allowed}
+.ck-trigger{position:fixed;left:14px;bottom:14px;z-index:90;width:36px;height:36px;border-radius:50%;background:rgba(26,24,20,.85);border:1px solid rgba(212,174,78,.3);color:#D4AE4E;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;backdrop-filter:blur(8px);transition:transform .2s}
+.ck-trigger:hover{transform:scale(1.08)}
+@media(max-width:520px){.ck-banner{left:10px;right:10px;bottom:calc(70px + env(safe-area-inset-bottom,0px));padding:18px}.ck-btn{min-width:0;font-size:12px;padding:10px 12px}.ck-trigger{bottom:calc(70px + env(safe-area-inset-bottom,0px))}}
+</style>
+
+<div class="ck-banner" id="ckBanner" role="dialog" aria-live="polite" aria-label="Consentement aux cookies">
+  <h3>Vos préférences cookies</h3>
+  <p>Nous utilisons des cookies pour assurer le bon fonctionnement du site, mesurer son audience et améliorer votre expérience. Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment. <a href="#" onclick="showSubpage('confidentialite');return false">En savoir plus</a></p>
+  <div class="ck-prefs" id="ckPrefs">
+    <div class="ck-row">
+      <div class="ck-row-info"><strong>Strictement nécessaires</strong><span>Indispensables au fonctionnement du site (navigation, sécurité, panier). Toujours actifs.</span></div>
+      <label class="ck-toggle"><input type="checkbox" checked disabled><span class="ck-slider"></span></label>
+    </div>
+    <div class="ck-row">
+      <div class="ck-row-info"><strong>Mesure d'audience</strong><span>Statistiques anonymisées pour comprendre l'usage du site.</span></div>
+      <label class="ck-toggle"><input type="checkbox" id="ckAnalytics"><span class="ck-slider"></span></label>
+    </div>
+    <div class="ck-row">
+      <div class="ck-row-info"><strong>Marketing</strong><span>Personnalisation et mesure de campagnes publicitaires.</span></div>
+      <label class="ck-toggle"><input type="checkbox" id="ckMarketing"><span class="ck-slider"></span></label>
+    </div>
+  </div>
+  <div class="ck-actions">
+    <button class="ck-btn ck-btn-ghost" id="ckReject" type="button">Tout refuser</button>
+    <button class="ck-btn ck-btn-ghost" id="ckCustom" type="button">Personnaliser</button>
+    <button class="ck-btn ck-btn-primary" id="ckSave" type="button">Tout accepter</button>
+  </div>
+</div>
+<button class="ck-trigger" id="ckTrigger" type="button" aria-label="Gérer les cookies" title="Gérer les cookies">🍪</button>
+
+<script>
+(function(){
+  var KEY='wt_cookie_consent_v1';
+  var banner=document.getElementById('ckBanner');
+  var prefs=document.getElementById('ckPrefs');
+  var trigger=document.getElementById('ckTrigger');
+  var saveBtn=document.getElementById('ckSave');
+  var anaIn=document.getElementById('ckAnalytics');
+  var mktIn=document.getElementById('ckMarketing');
+  var stored=null;
+  try{stored=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){}
+  function persist(c){try{localStorage.setItem(KEY,JSON.stringify(Object.assign({date:new Date().toISOString()},c)));}catch(e){}}
+  function open(){banner.classList.add('show');trigger.style.display='none';}
+  function close(){banner.classList.remove('show');trigger.style.display='flex';}
+  if(!stored){setTimeout(open,700);trigger.style.display='none';}
+  function syncMode(){
+    if(prefs.classList.contains('open')){saveBtn.textContent='Enregistrer';}
+    else{saveBtn.textContent='Tout accepter';}
+  }
+  document.getElementById('ckCustom').onclick=function(){prefs.classList.toggle('open');syncMode();};
+  document.getElementById('ckReject').onclick=function(){anaIn.checked=false;mktIn.checked=false;persist({necessary:true,analytics:false,marketing:false});close();};
+  saveBtn.onclick=function(){
+    var customizing=prefs.classList.contains('open');
+    var c=customizing?{necessary:true,analytics:anaIn.checked,marketing:mktIn.checked}:{necessary:true,analytics:true,marketing:true};
+    if(!customizing){anaIn.checked=true;mktIn.checked=true;}
+    persist(c);close();
+  };
+  trigger.onclick=function(){
+    if(stored){anaIn.checked=!!stored.analytics;mktIn.checked=!!stored.marketing;prefs.classList.add('open');syncMode();}
+    open();
+  };
+  window.openCookieSettings=function(){trigger.onclick();};
 })();
 </script>
 
