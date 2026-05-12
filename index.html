@@ -551,6 +551,64 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
   .cta-ecrin{padding:160px 80px}
 }
 
+/* ── NARROW SCREENS / LARGE SYSTEM FONT (≤480px & ≤360px) ─── */
+@media(max-width:480px){
+  /* Inputs & boutons : empile la barre rapide sur largeurs étroites */
+  .qlink-row{flex-direction:column;gap:10px}
+  .qlink-input{width:100%}
+  .qlink-btn{width:100%;text-align:center}
+  /* CTA hero : empile pour éviter le débordement */
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas .btn-w,.hero-ctas .btn-o{width:100%;text-align:center;justify-content:center}
+  /* Étapes home : autorise le wrap & resserre */
+  .step{padding:16px 14px;gap:10px}
+  .step h3{font-size:15px;word-wrap:break-word;overflow-wrap:anywhere}
+  .step p{font-size:12.5px;word-wrap:break-word;overflow-wrap:anywhere}
+  /* Process / "FAQ-étapes" : empile numéro + texte si trop serré */
+  .proc-step{gap:14px;padding:24px 0}
+  .proc-num{font-size:30px;width:32px}
+  .proc-text h3{font-size:17px;line-height:1.25;word-wrap:break-word;overflow-wrap:anywhere}
+  .proc-text p{font-size:13px;word-wrap:break-word;overflow-wrap:anywhere}
+  .proc-arrow{font-size:18px}
+  /* Sélecteurs taille / catégorie (champs animés du devis) : autorise wrap */
+  .gv3-field{flex-wrap:wrap;row-gap:4px;padding:8px 10px}
+  .gv3-field-name{flex:1 1 100%;min-width:0}
+  .gv3-field-val{flex:1 1 100%;font-size:12.5px;white-space:normal;word-break:break-word}
+  .gv3-pair{grid-template-columns:1fr}
+  /* Cartes catégories : wrap des libellés */
+  .cname{font-size:20px;word-wrap:break-word;overflow-wrap:anywhere}
+  .ccnt{word-wrap:break-word;overflow-wrap:anywhere}
+  /* Promos / sections offres : autorise wrap des lignes */
+  .of-prow{flex-wrap:wrap;row-gap:6px}
+  .of-ptext{flex:1 1 100%;min-width:0}
+  .of-ptext strong,.of-ptext span{word-wrap:break-word;overflow-wrap:anywhere}
+  .of-bslots{gap:8px}
+  .of-slot{padding:14px 8px;min-height:72px}
+  /* Titres généraux : évite la coupure quand la police système est agrandie */
+  .stitle,.bridge h2,.hero h1{word-wrap:break-word;overflow-wrap:anywhere;hyphens:auto}
+  /* Trust block: autorise réduction si police agrandie */
+  .trust{gap:10px;padding:24px 14px}
+  .trust-i span{font-size:22px}
+}
+@media(max-width:360px){
+  /* Très petits écrans + grande police système */
+  .hero h1{font-size:32px;line-height:1.1}
+  .hero-sub{font-size:13px}
+  .stitle{font-size:24px}
+  .qlink{padding:14px}
+  .step{padding:14px 12px}
+  .step h3{font-size:14px}
+  .step p{font-size:12px}
+  .snum{width:30px;height:30px;font-size:13px}
+  .proc-num{font-size:26px;width:28px}
+  .proc-text h3{font-size:16px}
+  .proc-text p{font-size:12.5px}
+  .gv3-field-val{font-size:12px}
+  .trust{grid-template-columns:1fr 1fr;gap:14px}
+  .hero-stats{gap:14px;flex-wrap:wrap}
+  .hstat span{font-size:22px}
+}
+
 </style>
   <meta property="og:title" content="Wentouch — Conciergerie Shopping Premium">
   <meta name="twitter:title" content="Wentouch — Conciergerie Shopping Premium">
