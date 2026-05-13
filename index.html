@@ -462,8 +462,8 @@ section{padding:40px 24px}
 .proc-grid{display:flex;flex-direction:column;gap:0}
 .proc-step{padding:32px 0;border-bottom:1px solid var(--beige-3);display:flex;gap:20px;align-items:flex-start;text-decoration:none;color:inherit}
 .proc-sub{font-size:13px;color:var(--ink-3);line-height:1.5;margin-top:4px;opacity:.7}
-.proc-arrow{margin-left:auto;color:var(--gold);font-size:22px;opacity:.5;transition:all .3s;flex-shrink:0}
-.proc-step:hover .proc-arrow{opacity:1;transform:translateX(4px)}
+.proc-arrow{margin-left:auto;color:var(--gold);font-size:16px;opacity:.85;transition:all .3s;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1px solid rgba(201,168,76,.45);background:rgba(201,168,76,.08);line-height:1}
+.proc-step:hover .proc-arrow{opacity:1;transform:translateX(4px);background:rgba(201,168,76,.18);border-color:var(--gold)}
 .proc-step:last-child{border-bottom:none}
 .proc-num{font-family:var(--fd);font-size:36px;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;width:40px}
 .proc-text h3{font-family:var(--fd);font-size:26px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.25;letter-spacing:-.01em}
@@ -571,7 +571,7 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
   .proc-num{font-size:30px;width:32px}
   .proc-text h3{font-size:21px;line-height:1.2;word-wrap:break-word;overflow-wrap:anywhere}
   .proc-text p{font-size:13px;word-wrap:break-word;overflow-wrap:anywhere}
-  .proc-arrow{font-size:18px}
+  .proc-arrow{font-size:14px;width:30px;height:30px}
   /* Sélecteurs taille / catégorie (champs animés du devis) : autorise wrap */
   .gv3-field{flex-wrap:wrap;row-gap:4px;padding:8px 10px}
   .gv3-field-name{flex:1 1 100%;min-width:0}
