@@ -628,6 +628,46 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
   <meta name="twitter:title" content="Wentouch — Conciergerie Shopping Premium">
   <meta name="twitter:description" content="Accédez aux plus grandes maisons européennes sans voyager. Commandez en ligne, payez en XAF, recevez au Cameroun.">
   <meta name="twitter:image" content="https://wentouch.shop/og-image.jpg">
+
+  <link rel="canonical" href="https://wentouch.shop/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wentouch.shop/#organization",
+        "name": "WenTouch",
+        "url": "https://wentouch.shop/",
+        "logo": "https://wentouch.shop/favicon.png",
+        "description": "Conciergerie shopping premium : achat dans les boutiques européennes et livraison au Cameroun.",
+        "areaServed": ["CM", "FR", "IT", "ES", "DE"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wentouch.shop/#website",
+        "url": "https://wentouch.shop/",
+        "name": "WenTouch — Conciergerie Shopping Premium",
+        "inLanguage": "fr",
+        "publisher": { "@id": "https://wentouch.shop/#organization" }
+      },
+      {
+        "@type": "Service",
+        "name": "Conciergerie shopping Europe → Cameroun",
+        "provider": { "@id": "https://wentouch.shop/#organization" },
+        "areaServed": { "@type": "Country", "name": "Cameroun" },
+        "serviceType": "Personal shopping & forwarding",
+        "description": "Achat dans les plus grandes boutiques européennes (mode homme, femme, bébé, luxe, beauté, électronique), paiement en XAF, livraison à domicile au Cameroun.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "XAF",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -645,7 +685,7 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
 </nav>
 
 <section class="hero">
-  <img class="hero-img" src="_img/gallery-hero.jpg" alt="Galleria Vittorio Emanuele II">
+  <img class="hero-img" src="_img/gallery-hero.jpg" alt="Galleria Vittorio Emanuele II — boutiques européennes" fetchpriority="high" decoding="async" width="1600" height="1200">
   <div class="hero-ov"></div>
   <!-- INTEGRATED LOGO ANIMATION -->
   <div id="hero-logo-anim" class="hero-logo-anim">
