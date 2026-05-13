@@ -282,6 +282,14 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
 .sp-cta-card h3 em{font-style:italic;color:var(--gold-l)}
 .sp-cta-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:22px}
 .sp-cta-card a{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--ink);border:none;border-radius:28px;padding:14px 30px;font-size:13px;font-weight:600;font-family:var(--fb);cursor:pointer;text-decoration:none;letter-spacing:.04em}
+.ig-block{display:block;background:var(--white);border:1px solid var(--beige-3);border-radius:16px;padding:26px 22px;text-align:center;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:border-color .25s ease, transform .25s ease}
+.ig-block::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(201,168,76,.10),transparent 60%);pointer-events:none}
+.ig-block:hover{border-color:var(--gold-l);transform:translateY(-2px)}
+.ig-block-tag{font-family:var(--fb);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.ig-block h3{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:8px}
+.ig-block h3 em{font-style:italic;color:var(--gold)}
+.ig-block p{font-size:12.5px;color:var(--ink-3);line-height:1.65;margin-bottom:18px;font-family:var(--fb)}
+.ig-block-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--gold-l);border-radius:24px;padding:10px 20px;font-size:12px;font-weight:500;font-family:var(--fb);letter-spacing:.05em}
 .sp-list{display:flex;flex-direction:column;gap:0}
 .sp-list-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--beige-3)}
 .sp-list-item:last-child{border-bottom:none}
