@@ -282,6 +282,14 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
 .sp-cta-card h3 em{font-style:italic;color:var(--gold-l)}
 .sp-cta-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:22px}
 .sp-cta-card a{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--ink);border:none;border-radius:28px;padding:14px 30px;font-size:13px;font-weight:600;font-family:var(--fb);cursor:pointer;text-decoration:none;letter-spacing:.04em}
+.ig-block{display:block;background:var(--white);border:1px solid var(--beige-3);border-radius:16px;padding:26px 22px;text-align:center;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:border-color .25s ease, transform .25s ease}
+.ig-block::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(201,168,76,.10),transparent 60%);pointer-events:none}
+.ig-block:hover{border-color:var(--gold-l);transform:translateY(-2px)}
+.ig-block-tag{font-family:var(--fb);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.ig-block h3{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:8px}
+.ig-block h3 em{font-style:italic;color:var(--gold)}
+.ig-block p{font-size:12.5px;color:var(--ink-3);line-height:1.65;margin-bottom:18px;font-family:var(--fb)}
+.ig-block-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--gold-l);border-radius:24px;padding:10px 20px;font-size:12px;font-weight:500;font-family:var(--fb);letter-spacing:.05em}
 .sp-list{display:flex;flex-direction:column;gap:0}
 .sp-list-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--beige-3)}
 .sp-list-item:last-child{border-bottom:none}
@@ -1019,6 +1027,10 @@ footer p{font-size:13px;line-height:1.7;margin-bottom:24px;max-width:300px}
     <a href="https://order.wentouch.shop">Commander</a>
     <a href="mailto:contact@wentouch.com">contact@wentouch.com</a>
     <a href="https://wa.me/237692052155" target="_blank" rel="noopener">WhatsApp · +237 692 052 155</a>
+    <a href="https://instagram.com/wentouch.shop" target="_blank" rel="noopener" aria-label="Instagram @wentouch.shop" style="display:inline-flex;align-items:center;gap:7px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="opacity:.85"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram · @wentouch.shop
+    </a>
     <a href="#" onclick="showSubpage('mentions-legales');return false">Mentions légales</a>
     <a href="#" onclick="showSubpage('confidentialite');return false">Confidentialité</a>
     <a href="#" onclick="if(window.openCookieSettings)openCookieSettings();return false">Gérer les cookies</a>
@@ -2440,6 +2452,18 @@ document.querySelectorAll('.rv:not(.ok),.rv-left:not(.ok),.rv-right:not(.ok),.rv
     </div>
   </div>
 
+  <div class="vg-s ig-block-wrap">
+    <a class="ig-block" href="https://instagram.com/wentouch.shop" target="_blank" rel="noopener" aria-label="Suivre @wentouch.shop sur Instagram">
+      <div class="ig-block-tag">Suivez notre univers <span style="font-style:normal">✨</span></div>
+      <h3>Découvrez nos <em>looks</em> &amp; sélections exclusives</h3>
+      <p>Inspiration quotidienne, nouveautés et coulisses sur Instagram.</p>
+      <span class="ig-block-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @wentouch.shop
+      </span>
+    </a>
+  </div>
+
   <div class="vg-s" id="vgs6">
     <div class="sp-cta-card">
       <h3>Vous avez <em>repéré</em><br>quelque chose ?</h3>
@@ -2834,6 +2858,18 @@ document.querySelectorAll('.rv:not(.ok),.rv-left:not(.ok),.rv-right:not(.ok),.rv
         Rejoindre la liste VIP
       </a>
     </div>
+  </div>
+
+  <div class="of-s ig-block-wrap">
+    <a class="ig-block" href="https://instagram.com/wentouch.shop" target="_blank" rel="noopener" aria-label="Suivre @wentouch.shop sur Instagram">
+      <div class="ig-block-tag">Restez à l'affût <span style="font-style:normal">✨</span></div>
+      <h3>Les <em>nouveautés</em> &amp; offres en avant-première</h3>
+      <p>Nos meilleures sélections et drops exclusifs partagés sur Instagram.</p>
+      <span class="ig-block-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @wentouch.shop
+      </span>
+    </a>
   </div>
 
   <div class="of-s" id="ofs5">
