@@ -1755,9 +1755,18 @@ document.querySelectorAll('.rv:not(.ok),.rv-left:not(.ok),.rv-right:not(.ok),.rv
 (function(){
   var bar = document.getElementById('home-sticky');
   if(!bar) return;
-  window.addEventListener('scroll', function(){
+  var ticking = false;
+  function update(){
     bar.classList.toggle('visible', window.scrollY > 600);
-  }, {passive:true});
+    ticking = false;
+  }
+  function onScroll(){
+    if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // Set correct initial state to avoid flicker on load / reload at scroll position
+  update();
+  window.addEventListener('load', update);
 })();
 
 </script>
